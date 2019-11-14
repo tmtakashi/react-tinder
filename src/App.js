@@ -44,7 +44,7 @@ export default class App extends React.Component {
     }
   }
 
-  like() {
+  throwOut(direction, coordinateX, coordinateY) {
     // ReactSwing Card Directions
     console.log("this.state.currentIndex", this.state.currentIndex);
     console.log('ReactSwing.DIRECTION', ReactSwing.DIRECTION);
@@ -64,34 +64,7 @@ export default class App extends React.Component {
       console.log('card', card);
 
       // throwOut method call
-      card.throwOut(100, 200, ReactSwing.DIRECTION.RIGHT);
-      card.on("throwoutend", () => {
-        this.setState({ currentIndex: this.state.currentIndex - 1 });
-      })
-    }
-  }
-
-  nope() {
-    // ReactSwing Card Directions
-    console.log("this.state.currentIndex", this.state.currentIndex);
-    console.log('ReactSwing.DIRECTION', ReactSwing.DIRECTION);
-
-    console.log('this.state.stack', this.state.stack);
-    console.log('this.state.stack.getConfig', this.state.stack.getConfig());
-    console.log('this.stackEl', this.stackEl);
-
-    // ReactSwing Component Childrens
-    const targetEl = this.stackEl.current.childElements[this.state.currentIndex]
-    console.log('targetEl', targetEl);
-    console.log('targetEl.current', targetEl.current);
-    if (targetEl && targetEl.current) {
-      // stack.getCard
-      const card = this.state.stack.getCard(targetEl.current);
-
-      console.log('card', card);
-
-      // throwOut method call
-      card.throwOut(100, 200, ReactSwing.DIRECTION.LEFT);
+      card.throwOut(coordinateX, coordinateY, direction);
       card.on("throwoutend", () => {
         this.setState({ currentIndex: this.state.currentIndex - 1 });
         console.log("this.state.currentIndex", this.state.currentIndex);
@@ -139,10 +112,10 @@ export default class App extends React.Component {
           )}
         </ReactSwing>
         <Container>
-          <Fab color="primary" onClick={this.like.bind(this)} aria-label="add">
+          <Fab color="primary" onClick={this.throwOut.bind(this, Direction.RIGHT, 100, 200)} aria-label="add">
             <FavoriteIcon />
           </Fab>
-          <Fab color="secondary" onClick={this.nope.bind(this)} aria-label="edit">
+          <Fab color="secondary" onClick={this.throwOut.bind(this, Direction.LEFT, -100, 200)} aria-label="edit">
             <ClearIcon />
           </Fab>
         </Container>
