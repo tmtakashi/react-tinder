@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactSwing from 'react-swing';
 import { Direction } from 'swing';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import Fab from '@material-ui/core/Fab';
-import Container from '@material-ui/core/Container';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ClearIcon from '@material-ui/icons/Clear';
 import './App.css';
+import { Fab } from '@material-ui/core';
 
 const data = [
   {
@@ -31,14 +25,6 @@ export default class App extends React.Component {
   stackEl = React.createRef();
   constructor(props) {
     super(props);
-    this.classes = makeStyles({
-      card: {
-        maxWidth: 345,
-      },
-      media: {
-        height: 200,
-      }
-    });
     this.state = {
       currentIndex: data.length - 1
     }
@@ -68,15 +54,15 @@ export default class App extends React.Component {
       card.on("throwoutend", () => {
         this.setState({ currentIndex: this.state.currentIndex - 1 });
         console.log("this.state.currentIndex", this.state.currentIndex);
+        console.log(targetEl.current)
+        this.state.stack.createCard(targetEl.current)
+        targetEl.current.remove()
+        console.log(this.stackEl.current)
       })
     }
   }
 
   render() {
-    const imageStyle = {
-      maxWidth: "100%",
-      maxHeight: "100%",
-    }
 
     const config = {
       allowedDirections: [Direction.LEFT, Direction.RIGHT],
@@ -84,41 +70,38 @@ export default class App extends React.Component {
         y = 0;
         element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
       },
+      minThrowOutDistance: 600,
+      maxThrowOutDistance: 800
     }
     return (
       <div className="App" >
-        <ReactSwing
-          className="stack"
-          setStack={stack => this.setState({ stack: stack })}
-          ref={this.stackEl}
-          config={config}
-        // throwout={e => console.log('throwout', e)}
-        >
-          {data.map(user =>
-            <Card key={user.id} ref={"card" + user.id} className={this.classes.card}
-            // throwout={e => console.log('card throwout', e, this.state.stack)}
-            >
-              <CardMedia
-                className={this.classes.media}
+        <div id="viewport">
+          <ReactSwing
+            className="stack"
+            setStack={stack => this.setState({ stack: stack })}
+            ref={this.stackEl}
+            config={config}
+          // throwout={e => console.log('throwout', e)}
+          >
+            {data.map(user =>
+              <div key={user.id} ref={"card" + user.id} className={'card'}
               >
-                <img style={imageStyle} src={"/static/images/" + user.img} alt="profile" />
-              </CardMedia>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <img src={"/static/images/" + user.img} alt="profile" />
+                <span>
                   {user.name + "、" + user.age}
-                </Typography>
-              </CardContent>
-            </Card>
-          )}
-        </ReactSwing>
-        <Container>
-          <Fab color="primary" onClick={this.throwOut.bind(this, Direction.RIGHT, 100, 200)} aria-label="add">
-            <FavoriteIcon />
-          </Fab>
-          <Fab color="secondary" onClick={this.throwOut.bind(this, Direction.LEFT, -100, 200)} aria-label="edit">
-            <ClearIcon />
-          </Fab>
-        </Container>
+                </span>
+              </div>
+            )}
+          </ReactSwing>
+          <div className={"btn-group"}>
+            <Fab color="secondary" onClick={this.throwOut.bind(this, Direction.RIGHT, 400, 400)} aria-label="add">
+              <FavoriteIcon />
+            </Fab>
+            <Fab color="primary" onClick={this.throwOut.bind(this, Direction.LEFT, -400, 400)} aria-label="edit">
+              <ClearIcon />
+            </Fab>
+          </div>
+        </div>
       </div >
     );
   }
