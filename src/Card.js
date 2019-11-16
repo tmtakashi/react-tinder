@@ -30,9 +30,11 @@ class Card extends React.Component {
                 style={this.props.style}
             >
                 <img src={this.props.person.img} alt="profile" />
-                <span>
-                    {this.props.person.name + "、" + this.props.person.age}
-                </span>
+                <div className={"info"}>
+                    <span>
+                        {this.props.person.name + "、" + this.props.person.age}
+                    </span>
+                </div>
             </div >
         );
 

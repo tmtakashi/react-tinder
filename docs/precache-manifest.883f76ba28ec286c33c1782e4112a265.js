@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "421a05f2752b0c08bf5132574cf19a79",
+    "revision": "a1d6e2a358194ed06fd594cb396ee210",
     "url": "/react-tinder/index.html"
   },
   {
-    "revision": "99334c3bb2e94ad9c78f",
-    "url": "/react-tinder/static/css/main.3bdc5a26.chunk.css"
+    "revision": "f30b61b6ab311b70a4ad",
+    "url": "/react-tinder/static/css/main.a9c0f330.chunk.css"
   },
   {
     "revision": "a2b9c2836f058218c6ad",
     "url": "/react-tinder/static/js/2.8a39269f.chunk.js"
   },
   {
-    "revision": "99334c3bb2e94ad9c78f",
-    "url": "/react-tinder/static/js/main.3c11ab4c.chunk.js"
+    "revision": "f30b61b6ab311b70a4ad",
+    "url": "/react-tinder/static/js/main.10c88c84.chunk.js"
   },
   {
     "revision": "dd2f92bfb8c058abdfc6",
