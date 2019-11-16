@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-tinder/static/css/main.3bdc5a26.chunk.css",
+    "main.js": "/react-tinder/static/js/main.3c11ab4c.chunk.js",
+    "main.js.map": "/react-tinder/static/js/main.3c11ab4c.chunk.js.map",
+    "runtime-main.js": "/react-tinder/static/js/runtime-main.06e9b1d8.js",
+    "runtime-main.js.map": "/react-tinder/static/js/runtime-main.06e9b1d8.js.map",
+    "static/js/2.8a39269f.chunk.js": "/react-tinder/static/js/2.8a39269f.chunk.js",
+    "static/js/2.8a39269f.chunk.js.map": "/react-tinder/static/js/2.8a39269f.chunk.js.map",
+    "index.html": "/react-tinder/index.html",
+    "precache-manifest.3f3a0fcb6f7f0cd08dfdd2c1388409e9.js": "/react-tinder/precache-manifest.3f3a0fcb6f7f0cd08dfdd2c1388409e9.js",
+    "service-worker.js": "/react-tinder/service-worker.js",
+    "static/css/main.3bdc5a26.chunk.css.map": "/react-tinder/static/css/main.3bdc5a26.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.06e9b1d8.js",
+    "static/js/2.8a39269f.chunk.js",
+    "static/css/main.3bdc5a26.chunk.css",
+    "static/js/main.3c11ab4c.chunk.js"
+  ]
+}
