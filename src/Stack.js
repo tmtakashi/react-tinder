@@ -38,6 +38,7 @@ class Stack extends React.Component {
         let nextCard = cards[cards.length - 2]
         this.setState({ topCard: topCard, nextCard: nextCard });
         if (cards.length > 0) {
+            // hide detail
             const detail = topCard.getElementsByClassName("detail")[0];
             detail.style.display = "none";
             // listen for pan gesture on top card
