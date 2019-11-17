@@ -1,5 +1,5 @@
 
-# Tinder Clone With React
+# Tinder Style UI with React
 
 https://tmtakashi.github.io/react-tinder/
 
