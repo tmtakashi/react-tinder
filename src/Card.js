@@ -5,10 +5,17 @@ import InfoIcon from '@material-ui/icons/Info';
 class Card extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isPanning: false,
+        this.detail = React.createRef()
+    }
+    openDetail() {
+        const detail = this.detail.current;
+        if (detail.style.display === "block") {
+            detail.style.display = "none";
+        } else {
+            detail.style.display = "block";
         }
     }
+
     render() {
         return (
             <div
@@ -22,9 +29,14 @@ class Card extends React.Component {
                     </span>
                 </div>
                 <div className={"show-detail"}>
-                    <IconButton className={"detail-btn"}>
+                    <IconButton onClick={this.openDetail.bind(this)} className={"detail-btn"}>
                         <InfoIcon></InfoIcon>
                     </IconButton>
+                </div>
+                <div style={{ display: "none" }} ref={this.detail} className={"detail"}>
+                    <p>
+                        {this.props.person.detail}
+                    </p>
                 </div>
             </div >
         );

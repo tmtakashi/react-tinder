@@ -38,6 +38,8 @@ class Stack extends React.Component {
         let nextCard = cards[cards.length - 2]
         this.setState({ topCard: topCard, nextCard: nextCard });
         if (cards.length > 0) {
+            const detail = topCard.getElementsByClassName("detail")[0];
+            detail.style.display = "none";
             // listen for pan gesture on top card
             this.setState({ topCardTransform: 'translateX(-50%) translateY(-50%) rotate(0deg) rotateY(0deg) scale(1)' })
             if (this.state.hammer) this.state.hammer.destroy()
@@ -171,7 +173,6 @@ class Stack extends React.Component {
                 {
                     this.state.currentPeople.length > 2 && this.state.currentPeople.slice(0, -2).reverse().map((person) => {
                         return <Card className={"card"}
-                            // key={person.id}
                             person={person}></Card>;
                     })
                 }
@@ -180,7 +181,6 @@ class Stack extends React.Component {
                     <Card
                         className={"card"}
                         style={{ transition: this.state.nextCardTransition, transform: this.state.nextCardTransform }}
-                        // key={this.state.currentPeople[this.state.currentPeople.length - 2].id}
                         person={this.state.currentPeople[this.state.currentPeople.length - 2]}
                     >
                     </Card>
@@ -190,7 +190,6 @@ class Stack extends React.Component {
                     <Card
                         className={"card"}
                         style={{ transition: this.state.topCardTransition, transform: this.state.topCardTransform }}
-                        // key={this.state.currentPeople[this.state.currentPeople.length - 1].id}
                         person={this.state.currentPeople[this.state.currentPeople.length - 1]}
                     >
                     </Card>
