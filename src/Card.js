@@ -25,12 +25,12 @@ class Card extends React.Component {
                 <img src={this.props.person.img} alt="profile" />
                 <div className={"info"}>
                     <span>
-                        {this.props.person.name + "、" + this.props.person.age}
+                        {this.props.person.name + ", " + this.props.person.age}
                     </span>
                 </div>
                 <div className={"show-detail"}>
                     <IconButton onClick={this.openDetail.bind(this)} className={"detail-btn"}>
-                        <InfoIcon></InfoIcon>
+                        <InfoIcon fontSize="medium" color="action"></InfoIcon>
                     </IconButton>
                 </div>
                 <div style={{ display: "none" }} ref={this.detail} className={"detail"}>
