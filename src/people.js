@@ -42,9 +42,9 @@ const people = [
         detail: "What if the disguised dear ate the male? It was then the whole poetry met the warmhearted cook."
     },
     {
-        name: 'Sara',
+        name: 'Aoi',
         age: 18,
-        img: "http://i40.tinypic.com/ofxe21.jpg",
+        img: "https://www.pakutaso.com/shared/img/thumb/mamechi1110011_TP_V.jpg",
         detail: "The plush background can't puncture the shirt. It was then the abject medium met the vibrant extension."
     },
     {
