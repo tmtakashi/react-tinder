@@ -36,10 +36,10 @@
 .stack .card .info {
   position: relative;
   width: 100%;
-  height: 30%;
+  height: 15%;
 }
 
-.stack .card span {
+.stack .card .info span {
   position: absolute;
   font-size: 1.5em;
   top: 50%;
@@ -47,11 +47,27 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.stack .card .show-detail {
+  position: relative;
+  width: 100%;
+  height: 15%;
+
+}
+
+.stack .card .show-detail .detail-btn {
+  position: absolute;
+  top: 45%;
+  left: 90%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  background-color: white;
+}
+
 .btn-group {
   position: absolute;
-  bottom: 5%;
-  height: 10%;
-  width: 40%;
+  top: 80%;
+  height: 20%;
+  width: 100%;
   margin: auto;
   left: 0;
   right: 0;
@@ -59,6 +75,11 @@
 } 
 
 .btn {
-  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  background: white;
 }
 

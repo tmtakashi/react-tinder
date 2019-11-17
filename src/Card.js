@@ -1,26 +1,12 @@
 import React from 'react';
+import { IconButton } from '@material-ui/core';
+import InfoIcon from '@material-ui/icons/Info';
 
 class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isPanning: false,
-        }
-    }
-
-    onPan(e) {
-        if (!this.state.isPanning) {
-
-            this.setState({ isPanning: true })
-            // remove transition property
-            this.topCard.style.transition = null
-
-            // get starting coordinates
-            let style = window.getComputedStyle(this.topCard)
-            let mx = style.transform.match(/^matrix\((.+)\)$/)
-            this.startPosX = mx ? parseFloat(mx[1].split(', ')[4]) : 0
-            this.startPosY = mx ? parseFloat(mx[1].split(', ')[5]) : 0
-
         }
     }
     render() {
@@ -34,6 +20,11 @@ class Card extends React.Component {
                     <span>
                         {this.props.person.name + "、" + this.props.person.age}
                     </span>
+                </div>
+                <div className={"show-detail"}>
+                    <IconButton className={"detail-btn"}>
+                        <InfoIcon></InfoIcon>
+                    </IconButton>
                 </div>
             </div >
         );

@@ -1,8 +1,8 @@
 import React from 'react';
+import { IconButton } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ClearIcon from '@material-ui/icons/Clear';
+import ClearIcon from '@material-ui/icons/Clear'
 import './App.css';
-import { Fab } from '@material-ui/core';
 import Stack from './Stack'
 
 export default class App extends React.Component {
@@ -71,12 +71,12 @@ export default class App extends React.Component {
       <div className="App" >
         <Stack ref={this.stack} people={this.people}></Stack>
         <div className={"btn-group"}>
-          <Fab onClick={this.like.bind(this)} className={"btn"} color="secondary" aria-label="add">
-            <FavoriteIcon />
-          </Fab>
-          <Fab onClick={this.nope.bind(this)} className={"btn"} color="primary" aria-label="edit">
-            <ClearIcon />
-          </Fab>
+          <IconButton onClick={this.nope.bind(this)} className={"btn nope"}>
+            <ClearIcon color="error"></ClearIcon>
+          </IconButton>
+          <IconButton onClick={this.like.bind(this)} className={"btn like"}>
+            <FavoriteIcon color="primary"></FavoriteIcon>
+          </IconButton>
         </div>
       </div>
     );
