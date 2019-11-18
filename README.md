@@ -15,7 +15,7 @@ https://medium.com/@simonepm/build-a-full-featured-tinder-like-carousel-in-vanil
 
 https://codepen.io/renatorib/pen/extCA
 
-Note: This project only supports mobile browsers.
+Note: This project only supports mobile browsers. You may need to wait until the images loaded.
 
 ## Setup
 
