@@ -1,5 +1,7 @@
 
-![demo](https://github.com/tmtakashi/react-tinder/blob/media/tinder_demo.gif)
+<div align="center">
+ <img src="https://github.com/tmtakashi/react-tinder/blob/media/tinder_demo.gif" alt="demo">
+</div>
 
 # Tinder Style UI with React
 
