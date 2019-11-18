@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59bc27a47966cf4471ac87f324d2fd86",
+    "revision": "487708b490391ea75c6f721613669b21",
     "url": "/react-tinder/index.html"
   },
   {
