@@ -1,4 +1,6 @@
 
+![demo](https://github.com/tmtakashi/react-tinder/blob/media/tinder_demo.gif)
+
 # Tinder Style UI with React
 
 Available on 
